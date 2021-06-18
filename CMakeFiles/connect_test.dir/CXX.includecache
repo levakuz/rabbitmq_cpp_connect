@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/levakuz/rabbitmq_cpp_connect/src/connect_test.cpp
+AMQPcpp.h
+/home/levakuz/rabbitmq_cpp_connect/src/AMQPcpp.h
+iostream
+-
+
+include/AMQPcpp.h
+cstdlib
+-
+cstdio
+-
+cstring
+-
+string
+-
+stdint.h
+-
+amqp.h
+include/amqp.h
+amqp_framing.h
+include/amqp_framing.h
+amqp_tcp_socket.h
+include/amqp_tcp_socket.h
+amqp_ssl_socket.h
+include/amqp_ssl_socket.h
+iostream
+-
+vector
+-
+map
+-
+memory
+-
+exception
+-
+functional
+-
+

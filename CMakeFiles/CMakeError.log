@@ -1,0 +1,83 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/levakuz/rabbitmq_cpp_connect/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_f1d07/fast && /usr/bin/make  -f CMakeFiles/cmTC_f1d07.dir/build.make CMakeFiles/cmTC_f1d07.dir/build
+make[1]: вход в каталог «/home/levakuz/rabbitmq_cpp_connect/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_f1d07.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fPIE -o CMakeFiles/cmTC_f1d07.dir/src.c.o -c /home/levakuz/rabbitmq_cpp_connect/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_f1d07
+/home/levakuz/.local/lib/python2.7/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1d07.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_f1d07.dir/src.c.o -o cmTC_f1d07 
+CMakeFiles/cmTC_f1d07.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x56): undefined reference to `pthread_cancel'
+src.c:(.text+0x67): undefined reference to `pthread_join'
+src.c:(.text+0x7b): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_f1d07.dir/build.make:98: recipe for target 'cmTC_f1d07' failed
+make[1]: *** [cmTC_f1d07] Error 1
+make[1]: выход из каталога «/home/levakuz/rabbitmq_cpp_connect/CMakeFiles/CMakeTmp»
+Makefile:127: recipe for target 'cmTC_f1d07/fast' failed
+make: *** [cmTC_f1d07/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the htonll exist failed with the following output:
+Change Dir: /home/levakuz/rabbitmq_cpp_connect/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c34e7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c34e7.dir/build.make CMakeFiles/cmTC_c34e7.dir/build
+make[1]: вход в каталог «/home/levakuz/rabbitmq_cpp_connect/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_c34e7.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -Wall -Wextra -pedantic -Wstrict-prototypes -Wcast-align -Wno-unused-function -fno-common -fvisibility=hidden   -fPIE   -o CMakeFiles/cmTC_c34e7.dir/CheckSymbolExists.c.o   -c /home/levakuz/rabbitmq_cpp_connect/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/levakuz/rabbitmq_cpp_connect/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/levakuz/rabbitmq_cpp_connect/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘htonll’ undeclared (first use in this function); did you mean ‘htonl’?
+   return ((int*)(&htonll))[argc];
+                   ^~~~~~
+                   htonl
+/home/levakuz/rabbitmq_cpp_connect/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+/home/levakuz/rabbitmq_cpp_connect/CMakeFiles/CMakeTmp/CheckSymbolExists.c:4:14: warning: parameter ‘argc’ set but not used [-Wunused-but-set-parameter]
+ int main(int argc, char** argv)
+              ^~~~
+CMakeFiles/cmTC_c34e7.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_c34e7.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_c34e7.dir/CheckSymbolExists.c.o] Error 1
+make[1]: выход из каталога «/home/levakuz/rabbitmq_cpp_connect/CMakeFiles/CMakeTmp»
+Makefile:126: recipe for target 'cmTC_c34e7/fast' failed
+make: *** [cmTC_c34e7/fast] Error 2
+
+File /home/levakuz/rabbitmq_cpp_connect/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <arpa/inet.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef htonll
+  return ((int*)(&htonll))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

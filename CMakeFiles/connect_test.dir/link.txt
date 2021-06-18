@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -O3 -DNDEBUG -rdynamic CMakeFiles/connect_test.dir/src/connect_test.cpp.o -o connect_test  -Wl,-rpath,/home/levakuz/rabbitmq_cpp_connect -lrabbitmq -lssl -lcrypto libamqpcpp-static.a -lrabbitmq -lssl -lcrypto libamqpcpp.so -lrabbitmq -lssl -lcrypto libamqpcpp-static.a -lrabbitmq -lssl -lcrypto -lrabbitmq -lssl -lcrypto -lrt -pthread 

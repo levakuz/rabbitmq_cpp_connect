@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -Wall -O3 -DNDEBUG -shared -Wl,-soname,libamqpcpp.so -o libamqpcpp.so CMakeFiles/amqpcpp.dir/include/AMQP.cpp.o CMakeFiles/amqpcpp.dir/include/AMQPBase.cpp.o CMakeFiles/amqpcpp.dir/include/AMQPException.cpp.o CMakeFiles/amqpcpp.dir/include/AMQPMessage.cpp.o CMakeFiles/amqpcpp.dir/include/AMQPExchange.cpp.o CMakeFiles/amqpcpp.dir/include/AMQPQueue.cpp.o 

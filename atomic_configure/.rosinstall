@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/levakuz/rabbitmq_cpp_connect/devel/setup.sh
